@@ -37,7 +37,7 @@ const HappyClients = () => {
   };
 
   return (
-    <div className="mt-12 mb-4 font-popins">
+    <div className="mt-12 mb-4 font-popins overflow-hidden">
       <div className="mb-8 text-center">
         <h2 className="text-5xl font-bold text-center mb-8">
           Our <span className="text-yellow-400 m">Happy</span> Clients

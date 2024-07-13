@@ -1,5 +1,6 @@
 import Banner from "../Banner/Banner";
 import CraftItems from "../CraftItems/CraftItems";
+import HappyClients from "../HappyClients/HappyClients";
 import LatestWork from "../LatestWork/LatestWork";
 import Navbar from "../Shared/Navbar";
 
@@ -10,6 +11,7 @@ const Home = () => {
             <Banner></Banner>
             <CraftItems></CraftItems>
             <LatestWork></LatestWork>
+            <HappyClients></HappyClients>
         </div>
     );
 };

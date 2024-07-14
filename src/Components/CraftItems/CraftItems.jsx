@@ -16,7 +16,6 @@ const CraftItems = () => {
       },
     },
     slides: { perView: 1 },
-    loop: true,
   });
 
   useEffect(() => {
@@ -25,6 +24,7 @@ const CraftItems = () => {
       .then((data) => setCraft(data));
   }, []);
 
+  // Re-initialize the slider when crafts data is fetched
   useEffect(() => {
     if (instanceRef.current) {
       instanceRef.current.update();
@@ -45,15 +45,15 @@ const CraftItems = () => {
       <div ref={sliderRef} className="keen-slider mt-24">
         {crafts.map((craft) => (
           <div
-            key={craft._id}
-            className={`keen-slider__slide number-slide number-slide${craft._id}`}
             style={{
               backgroundImage: `url(${craft.image})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
+            key={craft._id}
+            className="keen-slider__slide number-slide"
           >
-            <div className="flex flex-col items-center bg-opacity-50 bg-black p-4 rounded-lg">
+            <div className="flex flex-col items-center">
               <h2 className="text-yellow-400 font-bold text-xl font-poppins text-center">
                 {craft.item_name}
               </h2>

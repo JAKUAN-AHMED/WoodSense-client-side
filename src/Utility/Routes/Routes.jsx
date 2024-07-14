@@ -22,6 +22,7 @@ const router = createBrowserRouter([
       {
         path: "/myItems",
         element: <MyCraftList></MyCraftList>,
+        loader: () => fetch("http://localhost:3000/items"),
       },
       {
         path: "/craftItemsNav",
@@ -31,7 +32,8 @@ const router = createBrowserRouter([
       {
         path: "/details/:id",
         element: <Details></Details>,
-        loader: ({params}) => fetch(`http://localhost:3000/items/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/items/${params.id}`),
       },
       {
         path: "/addItems",

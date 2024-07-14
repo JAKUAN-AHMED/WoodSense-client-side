@@ -24,8 +24,20 @@ const Details = () => {
               {craft.stockStatus}
             </p>
             <p className="text-xl text-blue-400 font-bold">
-              <span className="text-yellow-400">Owner : </span>{" "}
-              {craft.userName}
+              <span className="text-blue-600">Subcategory : </span>{" "}
+              {craft.subcategory_Name}
+            </p>
+            <p className="text-base text-blue-400 font-bold">
+              <span className="text-black">Contact : </span>{" "}
+              {craft.userEmail}
+            </p>
+            <p className="text-base text-blue-400 font-bold">
+              <span className="text-black">Description : </span>{" "}
+              {craft.short_description}
+            </p>
+            <p className="text-base text-blue-400 font-bold">
+              <span className="text-black">Processing times : </span>{" "}
+              {craft.processing_time}
             </p>
             <button className="btn btn-square bg-white text-black w-[100px] h[50px]">
               Buy

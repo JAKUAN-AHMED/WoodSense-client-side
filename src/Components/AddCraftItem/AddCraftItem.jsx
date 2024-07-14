@@ -41,9 +41,8 @@ const AddCraftItem = () => {
     })
     .then(res=>res.json())
     .then(data=>{
-        if(data.insertedCount>0)
-        {
-            alert('Successfully Inserted')
+        if (data.acknowledged) {
+          alert("Successfully Inserted");
         }
         form.reset();
         
@@ -124,13 +123,13 @@ const AddCraftItem = () => {
                 <label className="label">
                   <span className="label-text">Description</span>
                 </label>
-                <input
-                  type="text"
-                  placeholder="Description"
+                <textarea
+                  placeholder="description"
+                  className="textarea textarea-bordered textarea-sm w-full max-w-xs"
                   name="short_description"
-                  className="input input-bordered"
-                  required
-                />
+                  type="text"
+                ></textarea>
+                {/* md */}
               </div>
               <div className="form-control">
                 <label className="label">

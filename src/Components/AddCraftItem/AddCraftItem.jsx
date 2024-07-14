@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import Footer from "../Shared/Footer";
 import Navbar from "../Shared/Navbar";
 
@@ -32,7 +33,7 @@ const AddCraftItem = () => {
     };
     console.log(CategoryItems);
     //send items to database
-    fetch("http://localhost:3000/items",{
+    fetch("http://localhost:3010/items",{
         method:'POST',
         headers:{
             'content-type':'application/json'
@@ -42,7 +43,10 @@ const AddCraftItem = () => {
     .then(res=>res.json())
     .then(data=>{
         if (data.acknowledged) {
-          alert("Successfully Inserted");
+          Swal.fire({
+            title: "Successfully Inserted",
+            icon: "success",
+          })
         }
         form.reset();
         

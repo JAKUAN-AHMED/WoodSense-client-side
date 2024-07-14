@@ -8,6 +8,7 @@ import Register from "../../Components/Register/Register";
 import Home from "../../Components/Home/Home";
 import CraftItemNav from "../../Components/CraftItemsNav/CraftItemNav";
 import Details from "../../Pages/Details/Details";
+import CategoryList from "../../Pages/Details/CategoryList/CategoryList";
 
 const router = createBrowserRouter([
   {
@@ -22,22 +23,27 @@ const router = createBrowserRouter([
       {
         path: "/myItems",
         element: <MyCraftList></MyCraftList>,
-        loader: () => fetch("http://localhost:3000/items"),
+        loader: () => fetch("http://localhost:3010/items"),
       },
       {
         path: "/craftItemsNav",
         element: <CraftItemNav></CraftItemNav>,
-        loader: () => fetch("http://localhost:3000/items"),
+        loader: () => fetch("http://localhost:3010/items"),
       },
       {
         path: "/details/:id",
         element: <Details></Details>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/items/${params.id}`),
+          fetch(`http://localhost:3010/items/${params.id}`),
       },
       {
         path: "/addItems",
         element: <AddCraftItem></AddCraftItem>,
+      },
+      {
+        path: "/subcategory/:id",
+        element: <CategoryList></CategoryList>,
+        loader: ({ params }) =>fetch(`http://localhost:3010/items/${params.id}`),
       },
       {
         path: "/login",

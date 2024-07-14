@@ -2,9 +2,10 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import "./CraftItems.css";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const CraftItems = () => {
+  const navigate=useNavigate();
   const [crafts, setCraft] = useState([]);
   const [sliderRef, instanceRef] = useKeenSlider({
     breakpoints: {
@@ -19,7 +20,7 @@ const CraftItems = () => {
   });
 
   useEffect(() => {
-    fetch("http://localhost:3000/items")
+    fetch("http://localhost:3010/items")
       .then((res) => res.json())
       .then((data) => setCraft(data));
   }, []);
@@ -51,10 +52,13 @@ const CraftItems = () => {
               backgroundPosition: "center",
             }}
             key={craft._id}
-            className="keen-slider__slide number-slide"
+            onClick={()=>{
+              navigate(`/subcategory/${craft._id}`)
+            }}
+            className="keen-slider__slide number-slide rounded shadow-white border-4 border-black"
           >
-            <div className="flex flex-col items-center">
-              <h2 className="text-yellow-400 font-bold text-xl font-poppins text-center">
+            <div className="flex flex-col items-center ">
+              <h2 className="text-white font-extrabold text-xl font-poppins text-center">
                 {craft.item_name}
               </h2>
               <button className="mt-4 btn btn-square bg-transparent text-yellow-300 w-[150px] h-[50px] hover:text-black">

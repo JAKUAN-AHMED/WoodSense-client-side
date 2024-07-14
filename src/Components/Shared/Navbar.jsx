@@ -1,11 +1,29 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Context/Provider/ProviderContext";
+import Swal from "sweetalert2";
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false); 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen); 
-  };
+  const [isOpen, setIsOpen] = useState(false);
 
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+  const { User, LogOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    LogOut()
+      .then(() => {
+        Swal.fire({
+          title:'Log Out Successfully',
+          icon: "success",
+        });
+      })
+      .catch(error=>{
+        Swal.fire({
+          title: error,
+          icon: "warning",
+        });
+      })
+  };
   const links = (
     <>
       <li>
@@ -16,7 +34,7 @@ const Navbar = () => {
             color: isActive ? "white" : "",
             border: isActive ? "2px solid yellow" : "",
           })}
-          onClick={() => setIsOpen(false)} 
+          onClick={() => setIsOpen(false)}
         >
           Home
         </NavLink>
@@ -29,7 +47,7 @@ const Navbar = () => {
             color: isActive ? "white" : "",
             border: isActive ? "2px solid yellow" : "",
           })}
-          onClick={() => setIsOpen(false)} 
+          onClick={() => setIsOpen(false)}
         >
           All Art & Craft Items
         </NavLink>
@@ -42,7 +60,7 @@ const Navbar = () => {
             color: isActive ? "white" : "",
             border: isActive ? "2px solid yellow" : "",
           })}
-          onClick={() => setIsOpen(false)} 
+          onClick={() => setIsOpen(false)}
         >
           Add Craft Item
         </NavLink>
@@ -55,7 +73,7 @@ const Navbar = () => {
             color: isActive ? "white" : "",
             border: isActive ? "2px solid yellow" : "",
           })}
-          onClick={() => setIsOpen(false)} 
+          onClick={() => setIsOpen(false)}
         >
           My Art & Craft List
         </NavLink>
@@ -100,12 +118,28 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1 gap-2">{links}</ul>
       </div>
       <div className="navbar-end gap-2">
-        <a className="btn btn-squre border-3 border-black w-[40px] h-[5px] text-[10px] md:w-[100px] md:h-[50px] md:text-[15px]">
-          <Link to={"/register"}>Register</Link>
-        </a>
-        <a className="btn btn-ghost border-2 border-yellow-300 text-yellow-300">
-          <Link to={"/login"}>Login</Link>
-        </a>
+        {User ? (
+          <div className="flex">
+            <a className="btn btn-circle">
+              <img
+                className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] border rounded-full"
+                src={User.photoURL || "user"}
+                alt={User.displayName || "user"}
+                title={User.displayName || " user"}
+              />
+            </a>
+            <a
+              onClick={handleLogOut}
+              className="btn btn-ghost border-2 border-yellow-300 text-yellow-300"
+            >
+              Log Out
+            </a>
+          </div>
+        ) : (
+          <a className="btn btn-squre border-3 border-black w-[40px] h-[5px] text-[10px] md:w-[100px] md:h-[50px] md:text-[15px]">
+            <Link to={"/login"}>Login</Link>
+          </a>
+        )}
       </div>
     </div>
   );

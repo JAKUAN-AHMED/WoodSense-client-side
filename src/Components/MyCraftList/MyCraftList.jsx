@@ -1,33 +1,63 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Footer from "../Shared/Footer";
 import Navbar from "../Shared/Navbar";
-import { useContext, useState } from "react";
+import { useContext,useState } from "react";
 import { AuthContext } from "../../Context/Provider/ProviderContext";
+import Swal from "sweetalert2";
+
 
 const MyCraftList = () => {
-    const crafts=useLoaderData();
-    const {User}=useContext(AuthContext);
-    const UserEmail=User?.email;
-    const [infos,setInfos]=useState([]);
-    console.log(User.email)
-    const Items = crafts.filter((craft) => craft.userEmail===UserEmail
-    )
-    const filterYes=Items.filter(item=>item.customization==='yes');
-    const filterNo=Items.filter(item=>item.customization==='no');
-    const handleFilter=value=>{
-        if(value=='customize')
-        {
-            setInfos(Items);
-        }
-        if(value==='yes')
-        {
-            setInfos(filterYes);
-        }
-        if(value==='no')
-        {
-            setInfos(filterNo);
-        }
+  const crafts = useLoaderData();
+  const { User } = useContext(AuthContext);
+  const UserEmail = User?.email;
+  const [infos, setInfos] = useState([]);
+  const Items = crafts.filter((craft) => craft.userEmail === UserEmail);
+  const filterYes = Items.filter((item) => item.customization === "yes");
+  const filterNo = Items.filter((item) => item.customization === "no");
+  const handleFilter = (value) => {
+    if (value == "customize") {
+      setInfos(Items);
     }
+    if (value === "yes") {
+      setInfos(filterYes);
+    }
+    if (value === "no") {
+      setInfos(filterNo);
+    }
+  };
+  const handleRemove = _id => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+          fetch(`http://localhost:3010/items/${_id}`, {
+            method: "DELETE",
+          })
+          .then((res) => res.json())
+          .then((data) =>{
+              if(data.deletedCount>0)
+              {
+                  Swal.fire({
+                    title: "Deleted!",
+                    text: "Successfully deleted.",
+                    icon: "success",
+                    });
+              }
+          }) }
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success",
+        });
+      });
+    }
+       
   return (
     <div>
       <Navbar />
@@ -76,8 +106,16 @@ const MyCraftList = () => {
                 </span>{" "}
                 {data.customization}
               </p>
-              <div className="card-actions">
-                <button className="btn btn-primary">View Details</button>
+              <div className="card-actions flex gap-2 mt-2">
+                <button className="btn btn-square bg-blue-400 text-white w-[100px] h[50px]">
+                  <Link to={`/details/${data._id}`}>View Details</Link>
+                </button>
+                <button className="btn btn-square bg-yellow-200 text-black w-[100px] h[50px] text-base">
+                  Update
+                </button>
+                <button onClick={()=>handleRemove(data._id)} className="btn btn-square bg-red-200 text-black w-[100px] h[50px] text-base">
+                  Delete
+                </button>
               </div>
             </div>
           </div>

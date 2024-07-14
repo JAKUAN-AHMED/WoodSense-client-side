@@ -1,19 +1,88 @@
 [
-  { "id": 1, "facility": "Living room" },
-  { "id": 2, "facility": "Study area" },
-  { "id": 3, "facility": "Shared kitchen" },
-  { "id": 4, "facility": "Shared bathroom" },
-  { "id": 5, "facility": "Wi-Fi" },
-  { "id": 6, "facility": "Study room" },
-  { "id": 7, "facility": "Living room" },
-  { "id": 8, "facility": "Kitchen" },
-  { "id": 9, "facility": "Balcony" },
-  { "id": 10, "facility": "Parking" },
-  { "id": 11, "facility": "Gym" },
-  { "id": 12, "facility": "Swimming pool" },
-  { "id": 13, "facility": "Fireplace" },
-  { "id": 14, "facility": "Private elevator" },
-  { "id": 15, "facility": "Rooftop" },
-  { "id": 16, "facility": "Garden" },
-  { "id": 17, "facility": "Garage" }
+  {
+    "id": 1,
+    "productType": "Jute",
+    "customerName": "John Doe",
+    "reviewText": "The jute products are amazing! Very sturdy and eco-friendly.",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "productType": "Wood",
+    "customerName": "Alice Johnson",
+    "reviewText": "The wooden furniture is very elegant and well-made.",
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "productType": "Jute",
+    "customerName": "Carol Green",
+    "reviewText": "Jute kitchenware is fantastic, very durable and stylish.",
+    "rating": 5
+  },
+  {
+    "id": 4,
+
+    "productType": "Wood",
+
+    "customerName": "David Lee",
+    "reviewText": "Wooden bathroom accessories are top-notch. Highly recommend.",
+    "rating": 5
+  },
+  {
+    "id": 5,
+
+    "productType": "Jute",
+
+    "customerName": "Eve White",
+    "reviewText": "Jute decor items are beautiful and environmentally friendly.",
+    "rating": 4
+  },
+  {
+    "id": 6,
+
+    "productType": "Wood",
+
+    "customerName": "Frank Black",
+    "reviewText": "Wooden study room furniture is both functional and stylish.",
+    "rating": 5
+  },
+  {
+    "id": 7,
+
+    "productType": "Jute",
+
+    "customerName": "Grace Gray",
+    "reviewText": "The jute rugs and cushions are amazing, very comfortable.",
+    "rating": 5
+  },
+  {
+    "id": 8,
+
+    "productType": "Wood",
+
+    "customerName": "Henry Red",
+    "reviewText": "Wooden kitchenware is durable and looks great.",
+    "rating": 4
+  },
+  {
+    "id": 9,
+
+    "productType": "Jute",
+
+    "reviewId": 11,
+    "customerName": "Ivy Purple",
+    "reviewText": "Jute furniture is very stylish and perfect for outdoor use.",
+    "rating": 5
+  },
+  {
+    "id": 10,
+
+    "productType": "Wood",
+
+    "reviewId": 12,
+    "customerName": "Jack Orange",
+    "reviewText": "Wooden parking signs and accessories are unique and functional.",
+    "rating": 4
+  }
 ]

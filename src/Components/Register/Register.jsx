@@ -1,20 +1,18 @@
 import { useContext, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { getAuth, updateProfile } from "firebase/auth";
 import Navbar from "../Shared/Navbar";
 import Footer from "../Shared/Footer";
 import { AuthContext } from "../../Context/Provider/ProviderContext";
 import app from "../../Utility/Firebase/firebase.config";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const [show, setShow] = useState(false);
   const passRef = useRef();
   const { CreateUser } = useContext(AuthContext);
   const auth = getAuth(app);
-  const [Error, setError] = useState(null);
-
-  
   const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
@@ -23,38 +21,55 @@ const Register = () => {
     const email = form.get("email");
     const password = form.get("password");
     const pass = passRef.current.value;
-
-    setError("");
     if (pass.length < 6) {
-      setError("Password must be 6 characters or longer");
+      Swal.fire({
+        title: "Password must be 6 characters or longer",
+        icon: "warning",
+      });
     } else if (!/[A-Z]/.test(pass)) {
-      setError("Password should have at least one uppercase letter");
+      Swal.fire({
+        title: "Password should have at least one uppercase letter",
+        icon: "warning",
+      });
     } else if (!/[a-z]/.test(pass)) {
-      setError("Password should have at least one lowercase letter");
+      Swal.fire({
+        title: "Password should have at least one lowercase letter",
+        icon: "warning",
+      });
     } else {
       // Create user
       CreateUser(email, password)
         .then((res) => {
           console.log(res.user);
-
+             Swal.fire({
+               title: "Successfully Registered",
+               icon: "success",
+             });
           // Update profile
           updateProfile(auth.currentUser, {
             displayName: name,
             photoURL: photoURL,
           })
             .then(() => {
-              console.log("Profile updated");
+              Swal.fire({
+                title: 'Profile Updated',
+                icon: "success",
+              });
             })
             .catch((error) => {
-              setError(error.message);
-              console.error("Profile update error:", error);
+              Swal.fire({
+                title: error,
+                icon: "warning",
+              });
             });
 
           e.target.reset();
         })
         .catch((error) => {
-          setError(error.message);
-          console.error("Registration error:", error);
+          Swal.fire({
+            title: error,
+            icon: "warning",
+          });
         });
     }
   };

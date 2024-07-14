@@ -30,7 +30,7 @@ export default function Banner() {
       >
         <SwiperSlide
           style={{
-            backgroundImage: `url('https://i.ibb.co/TkFnpNt/Wooden-Utensils-and-Kitchenware.jpg')`,
+            backgroundImage: `url('https://i.ibb.co/4tFwmQ0/Jute-Wall-Hanging.jpg')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -49,7 +49,7 @@ export default function Banner() {
         </SwiperSlide>
         <SwiperSlide
           style={{
-            backgroundImage: `url('https://i.ibb.co/j80kmcp/Jute-Kitchenware-utensils.jpg')`,
+            backgroundImage: `url('https://i.ibb.co/2ycmNrP/Wooden-Salad-Bowl.jpg')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -67,7 +67,7 @@ export default function Banner() {
         </SwiperSlide>
         <SwiperSlide
           style={{
-            backgroundImage: `url('https://i.ibb.co/sQHsFZD/wooden-and-sculptures.jpg')`,
+            backgroundImage: `url('https://i.ibb.co/2MBxzWc/Wooden-Coffee-Table.jpg')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}

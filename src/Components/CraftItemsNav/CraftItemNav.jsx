@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Footer from "../Shared/Footer";
 import Navbar from "../Shared/Navbar";
 
@@ -26,7 +26,9 @@ const CraftItemNav = () => {
                   <td>{craft.item_name}</td>
                   <td>{craft.stockStatus}</td>
                   <td>{craft.price}</td>
-                  <button className="btn btn-square bg-yellow-200 text-black">view</button>
+                  <button className="btn btn-square bg-yellow-200 text-black">
+                    <Link to={`/details/${craft._id}`}>view</Link>
+                  </button>
                 </tr>
               ))}
             </tbody>

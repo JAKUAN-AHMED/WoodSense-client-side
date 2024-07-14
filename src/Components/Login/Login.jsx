@@ -6,15 +6,23 @@ import Navbar from '../Shared/Navbar';
 import Footer from '../Shared/Footer';
 import { AuthContext } from '../../Context/Provider/ProviderContext';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 const Login = () => {
     const {LogIn,google,github}=useContext(AuthContext)
     const handleGoogle = () => {
       google()
         .then((result) => {
           console.log(result.user);
+           Swal.fire({
+             title: "Login Successfully",
+             icon: "success",
+           });
         })
         .catch((error) => {
-          console.error("Google sign-in error:", error);
+          Swal.fire({
+            title: error,
+            icon: "warning",
+          });
         });
     };
 
@@ -22,9 +30,16 @@ const Login = () => {
       github()
         .then((result) => {
           console.log(result.user);
+           Swal.fire({
+             title: "Login Successfully",
+             icon: "success",
+           });
         })
         .catch((error) => {
-          console.error("GitHub sign-in error:", error);
+          Swal.fire({
+            title: error,
+            icon: "warning",
+          });
         });
     };
    const handleLogin = (e) => {
@@ -35,11 +50,22 @@ const Login = () => {
      //Sign In
      LogIn(email,password)
      .then(res=>{
+         Swal.fire({
+           title: "Login Successfully",
+           icon: "success",
+         });
       console.log(res.user)
       e.target.reset();
       
     })
-     .catch(error=>console.log(error.message))
+     .catch(error=>
+     {
+         Swal.fire({
+           title: error,
+           icon: "warning",
+         });
+     }
+     )
 
    };
     return (

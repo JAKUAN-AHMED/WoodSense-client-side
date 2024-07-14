@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../../Components/Shared/Navbar";
 import Footer from "../../Components/Shared/Footer";
 
@@ -7,8 +7,8 @@ const Details = () => {
     return (
       <div className="max-w-6xl mx-auto">
         <Navbar></Navbar>
-        <div className="grid grid-cols-1 md:grid-cols-2 mt-12 mb-12 justify-around card border rounded shadow-lg items-center p-8 bg-yellow-100">
-          <div className="w-[400px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-12 mb-12 justify-around card border rounded shadow-lg items-center p-8 bg-yellow-100 gap-8">
+          <div className="lg:w-[500px]">
             <img src={craft.image} alt="" />
           </div>
           <div className="flex flex-col items-start gap-y-4 ">
@@ -40,7 +40,7 @@ const Details = () => {
               {craft.processing_time}
             </p>
             <button className="btn btn-square bg-white text-black w-[100px] h[50px]">
-              Buy
+             <Link to={'/'}>Back</Link>
             </button>
           </div>
         </div>

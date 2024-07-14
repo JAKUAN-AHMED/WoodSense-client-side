@@ -23,7 +23,7 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to="/craftItems"
+          to="/craftItemsNav"
           style={({ isActive }) => ({
             background: isActive ? "purple" : "white",
             color: isActive ? "white" : "",
@@ -100,18 +100,12 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1 gap-2">{links}</ul>
       </div>
       <div className="navbar-end gap-2">
-        <Link
-          to="/register"
-          className="btn btn-squre border-3 border-black w-[40px] h-[5px] text-[10px] md:w-[100px] md:h-[50px] md:text-[15px]"
-        >
-          Register
-        </Link>
-        <Link
-          to="/login"
-          className="btn btn-ghost border-2 border-yellow-300 text-yellow-300"
-        >
-          Login
-        </Link>
+        <a className="btn btn-squre border-3 border-black w-[40px] h-[5px] text-[10px] md:w-[100px] md:h-[50px] md:text-[15px]">
+          <Link to={"/register"}>Register</Link>
+        </a>
+        <a className="btn btn-ghost border-2 border-yellow-300 text-yellow-300">
+          <Link to={"/login"}>Login</Link>
+        </a>
       </div>
     </div>
   );

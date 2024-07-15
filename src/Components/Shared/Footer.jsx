@@ -1,22 +1,22 @@
 const Footer = () => {
     return (
-      <footer className="footer bg-black text-white p-10 mt-24">
+      <footer className="footer bg-base-300 text-base-content p-10 max-w-6xl mx-auto">
         <nav>
-          <h6 className="footer-title">Services</h6>
+          <h6 className="text-2xl font-bold text-blue-400">Services</h6>
           <a className="link link-hover">Branding</a>
           <a className="link link-hover">Design</a>
           <a className="link link-hover">Marketing</a>
           <a className="link link-hover">Advertisement</a>
         </nav>
         <nav>
-          <h6 className="footer-title">Company</h6>
+          <h6 className="text-2xl font-bold text-blue-400">Company</h6>
           <a className="link link-hover">About us</a>
           <a className="link link-hover">Contact</a>
           <a className="link link-hover">Jobs</a>
           <a className="link link-hover">Press kit</a>
         </nav>
         <nav>
-          <h6 className="footer-title">Social</h6>
+          <h6 className="text-2xl font-bold text-blue-400">Social</h6>
           <div className="grid grid-flow-col gap-4">
             <a>
               <svg
@@ -52,6 +52,9 @@ const Footer = () => {
               </svg>
             </a>
           </div>
+          <h6 className="text-yellow-400 text-4xl font-bold">
+            Woods<span className="text-blue-400">Sense</span>
+          </h6>
         </nav>
       </footer>
     );

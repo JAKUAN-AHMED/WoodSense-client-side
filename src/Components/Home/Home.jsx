@@ -7,7 +7,7 @@ import Navbar from "../Shared/Navbar";
 
 const Home = () => {
     return (
-        <div className="max-w-6xl mx-auto overflow-hidden">
+        <div className="max-w-6xl mx-auto font-popins overflow-hidden">
             <Navbar></Navbar>
             <Banner></Banner>
             <CraftItems></CraftItems>

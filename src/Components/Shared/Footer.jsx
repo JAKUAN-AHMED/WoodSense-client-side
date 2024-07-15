@@ -1,7 +1,7 @@
 import { CiFacebook, CiInstagram, CiTwitter } from "react-icons/ci";
 const Footer = () => {
   return (
-    <footer className="footer bg-base-300 text-base-content p-10 max-w-6xl mx-auto">
+    <footer className="footer bg-base-300 text-base-content p-10 max-w-6xl mx-auto text-center font-popins">
       <nav>
         <h6 className="text-2xl font-bold text-blue-400">Services</h6>
         <a className="link link-hover">Branding</a>
@@ -46,7 +46,7 @@ const Footer = () => {
           Woods<span className="text-blue-400">Sense</span>
         </h6>
       </nav>
-      <nav className="mt-10">
+      <nav className="mt-10 flex items-center flex-col">
         <p className="text-center text-base">
           © 2024 WoodsSense. All rights reserved.
         </p>

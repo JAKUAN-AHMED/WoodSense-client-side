@@ -111,7 +111,7 @@ const MyCraftList = () => {
                   <Link to={`/details/${data._id}`}>View Details</Link>
                 </button>
                 <button className="btn btn-square bg-yellow-200 text-black w-[100px] h[50px] text-base">
-                  Update
+                  <Link to={`/update/${data._id}`}>Update</Link>
                 </button>
                 <button onClick={()=>handleRemove(data._id)} className="btn btn-square bg-red-200 text-black w-[100px] h[50px] text-base">
                   Delete

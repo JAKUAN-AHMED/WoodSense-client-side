@@ -9,6 +9,8 @@ import Home from "../../Components/Home/Home";
 import CraftItemNav from "../../Components/CraftItemsNav/CraftItemNav";
 import Details from "../../Pages/Details/Details";
 import CategoryList from "../../Pages/Details/CategoryList/CategoryList";
+import UpdateCraft from "../../Pages/Update/UpdateCraft";
+import ProtectedRoutes from "../../Pages/Protected/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +24,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/myItems",
-        element: <MyCraftList></MyCraftList>,
+        element: (
+          <ProtectedRoutes>
+            <MyCraftList></MyCraftList>
+          </ProtectedRoutes>
+        ),
         loader: () => fetch("http://localhost:3010/items"),
       },
       {
@@ -32,18 +38,37 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: <Details></Details>,
+        element: (
+          <ProtectedRoutes>
+            <Details></Details>
+          </ProtectedRoutes>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:3010/items/${params.id}`),
       },
       {
         path: "/addItems",
-        element: <AddCraftItem></AddCraftItem>,
+        element: (
+          <ProtectedRoutes>
+            <AddCraftItem></AddCraftItem>
+          </ProtectedRoutes>
+        ),
       },
       {
         path: "/subcategory/:id",
         element: <CategoryList></CategoryList>,
-        loader: ({ params }) =>fetch(`http://localhost:3010/items/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:3010/items/${params.id}`),
+      },
+      {
+        path: "/update/:id",
+        element: (
+          <ProtectedRoutes>
+            <UpdateCraft></UpdateCraft>
+          </ProtectedRoutes>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:3010/items/${params.id}`),
       },
       {
         path: "/login",

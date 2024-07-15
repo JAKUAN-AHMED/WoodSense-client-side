@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const LatestWork = () => {
   const [crafts, setCraft] = useState([]);
-
+ useEffect(() => {
+   AOS.init({
+     duration: 1000, // You can also configure AOS here
+   });
+ }, []);
   useEffect(() => {
     fetch("http://localhost:3010/items")
       .then((res) => res.json())
@@ -22,7 +28,7 @@ const LatestWork = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 text-center  mt-24 mb-24 gap-4">
         {crafts.slice(0,11).map((craft) => (
-          <div key={craft._id}>
+          <div key={craft._id} data-aos="fade-up-left">
             <img src={craft.image} alt="" />
           </div>
         ))}

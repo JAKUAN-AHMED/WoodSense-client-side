@@ -3,8 +3,14 @@ import "keen-slider/keen-slider.min.css";
 import "./CraftItems.css";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const CraftItems = () => {
+   useEffect(() => {
+     AOS.init({
+       duration: 1000, // You can also configure AOS here
+     });
+   }, []);
   const navigate=useNavigate();
   const [crafts, setCraft] = useState([]);
   const [sliderRef, instanceRef] = useKeenSlider({
@@ -43,7 +49,7 @@ const CraftItems = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident.
         </p>
       </div>
-      <div ref={sliderRef} className="keen-slider mt-24">
+      <div ref={sliderRef} data-aos="fade-down" className="keen-slider mt-24">
         {crafts.map((craft) => (
           <div
             style={{
@@ -52,8 +58,8 @@ const CraftItems = () => {
               backgroundPosition: "center",
             }}
             key={craft._id}
-            onClick={()=>{
-              navigate(`/subcategory/${craft._id}`)
+            onClick={() => {
+              navigate(`/subcategory/${craft._id}`);
             }}
             className="keen-slider__slide number-slide rounded shadow-white border-4 border-black"
           >

@@ -4,8 +4,15 @@ import "slick-carousel/slick/slick-theme.css";
 import { CiLocationArrow1 } from "react-icons/ci";
 import { useEffect, useState } from "react";
 import { IoMdStarHalf } from "react-icons/io";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const HappyClients = () => {
+   useEffect(() => {
+     AOS.init({
+       duration: 1000, // You can also configure AOS here
+     });
+   }, []);
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
     fetch("aminities.json")
@@ -50,7 +57,7 @@ const HappyClients = () => {
       </div>
       <Slider {...sliderSettings}>
         {reviews.map((review) => (
-          <div key={review.id} className="gap-4">
+          <div key={review.id} className="gap-4" data-aos="flip-left">
             <div className="card border rounded shadow-lg bg-[#fff5f5] font-popins text-center  m-4">
               <div className="card-body">
                 <h2 className="text-3xl card-title text-center text-blue-400 flex items-center justify-center gap-4">

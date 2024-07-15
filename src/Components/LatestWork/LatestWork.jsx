@@ -22,7 +22,7 @@ const LatestWork = () => {
           <span className="text-yellow-400">Latest</span> Jute and{" "}
           <span className="text-red-400">Wooden</span> Work
         </h2>
-        <p>
+        <p className="text-base mt-4">
           artisanal products showcasing traditional craftsmanship and
           sustainability.
         </p>

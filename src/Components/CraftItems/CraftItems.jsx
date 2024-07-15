@@ -45,7 +45,7 @@ const CraftItems = () => {
           <span className="text-blue-400">House</span> of{" "}
           <span className="text-red-400">Crafts</span>
         </h2>
-        <p>
+        <p className="text-base mt-4">
           Jute and wooden crafts combine natural materials to create
           eco-friendly.
         </p>

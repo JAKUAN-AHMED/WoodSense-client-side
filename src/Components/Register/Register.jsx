@@ -51,10 +51,7 @@ const Register = () => {
             photoURL: photoURL,
           })
             .then(() => {
-              Swal.fire({
-                title: 'Profile Updated',
-                icon: "success",
-              });
+              
             })
             .catch((error) => {
               Swal.fire({
@@ -74,7 +71,6 @@ const Register = () => {
     }
   };
 
-  const isDisabled = Error !== null;
 
   return (
     <div>
@@ -149,9 +145,7 @@ const Register = () => {
                 />
                 <span
                   onClick={() => setShow(!show)}
-                  className={`absolute left-[80%] ${
-                    Error ? "top-[55%]" : "top-[60%]"
-                  }`}
+                  className='absolute top-[69%] right-[15%]'
                 >
                   {show ? <FaEyeSlash /> : <FaEye />}
                 </span>
@@ -159,10 +153,7 @@ const Register = () => {
               </div>
               <div className="form-control mt-6">
                 <button
-                  className={`btn btn-primary bg-[#fff5f5] text-blue-400 hover:bg-slate-100 hover:text-yellow-400 ${
-                    isDisabled ? "opacity-50 cursor-not-allowed" : ""
-                  }`}
-                  disabled={isDisabled}
+                  className='btn btn-primary bg-[#fff5f5] text-blue-400 hover:bg-slate-100 hover:text-yellow-400'
                 >
                   Register
                 </button>

@@ -71,7 +71,7 @@ const Login = () => {
     return (
       <div>
         <Navbar></Navbar>
-        <div className="hero bg-base-200 max-w-6xl mx-auto mb-8 mt-8">
+        <div className="hero bg-base-200 max-w-6xl mx-auto mb-8 mt-8 overflow-hidden">
           <div className="hero-content flex-col lg:flex-row justify-between">
             <div className="text-center w-80 lg:text-left pr-6 lg:mr-12">
               <h1 className="text-4xl font-bold text-blue-600 mt-4">
@@ -89,7 +89,7 @@ const Login = () => {
                 alt=""
               />
             </div>
-            <div className="card bg-base-100 w-80 max-w-sm shrink-0 shadow-2xl">
+            <div className="card bg-base-100 w-80 max-w-sm shrink-0 shadow-2xl overflow-hidden">
               <form onSubmit={handleLogin} className="card-body">
                 <div className="form-control">
                   <label className="label">
@@ -125,6 +125,7 @@ const Login = () => {
                     placeholder="Password"
                     className="input input-bordered"
                     required
+                    autoComplete="current-password"
                   />
                 </div>
 

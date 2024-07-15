@@ -16,7 +16,7 @@ const LatestWork = () => {
   }, []);
 
   return (
-    <div className="mt-28">
+    <div className="mt-28 overflow-hidden">
       <div className="text-center gap-y-4 mt-6 flex flex-col ">
         <h2 className="text-5xl font-bold font-poppins text-center">
           <span className="text-yellow-400">Latest</span> Jute and{" "}
@@ -27,7 +27,7 @@ const LatestWork = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 text-center  mt-24 mb-24 gap-4">
-        {crafts.slice(0,11).map((craft) => (
+        {crafts.slice(0, 11).map((craft) => (
           <div key={craft._id} data-aos="fade-up-left">
             <img src={craft.image} alt="" />
           </div>

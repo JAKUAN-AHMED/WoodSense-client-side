@@ -90,7 +90,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-[#124E66] border rounded shadow-lg">
+    <div className="navbar bg-[#124E66] border rounded shadow-lg ">
       <div className="navbar-start">
         <div className="dropdown" onClick={toggleDropdown}>
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -135,12 +135,12 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-2">{links}</ul>
       </div>
-      <div className="navbar-end gap-2">
+      <div className="navbar-end md:gap-2">
         {User ? (
-          <div className="flex items-center">
+          <div className="flex items-center ml-4">
             <a className="btn btn-circle">
               <img
-                className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] border rounded-full"
+                className="w-[40px] h-[40px]  md:w-[50px] md:h-[50px] border rounded-full"
                 src={User?.photoURL || "user"}
                 alt={User?.displayName || "user"}
                 title={User?.displayName || "user"}

@@ -36,7 +36,7 @@ export default function Banner() {
             backgroundPosition: "center",
           }}
         >
-          <div className="h-[400px] md:h-[600px] flex items-center justify-center">
+          <div className="h-[400px] md:h-[600px] flex items-center justify-center overflow-hidden">
             <div>
               <h2 className="text-3xl md:text-5xl mb-4 font-bold text-center text-yellow-400">
                 Wooden <span className="text-blue-400">Utensils</span> and{" "}

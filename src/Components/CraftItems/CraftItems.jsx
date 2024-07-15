@@ -46,7 +46,8 @@ const CraftItems = () => {
           <span className="text-red-400">Crafts</span>
         </h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident.
+          Jute and wooden crafts combine natural materials to create
+          eco-friendly.
         </p>
       </div>
       <div ref={sliderRef} data-aos="fade-down" className="keen-slider mt-24">

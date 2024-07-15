@@ -23,7 +23,8 @@ const LatestWork = () => {
           <span className="text-red-400">Wooden</span> Work
         </h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident.
+          artisanal products showcasing traditional craftsmanship and
+          sustainability.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 text-center  mt-24 mb-24 gap-4">

@@ -57,8 +57,6 @@ cd ../woodsense-server-side
 npm install
 Create a .env file in the root of the woodsense-client directory with the following content:
 
-env
-Copy code
 REACT_APP_FIREBASE_API_KEY=your-firebase-api-key
 REACT_APP_FIREBASE_AUTH_DOMAIN=your-firebase-auth-domain
 REACT_APP_FIREBASE_PROJECT_ID=your-firebase-project-id
@@ -67,21 +65,17 @@ REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your-firebase-messaging-sender-id
 REACT_APP_FIREBASE_APP_ID=your-firebase-app-id
 Create a .env file in the root of the woodsense-server directory with the following content:
 
-env
-Copy code
+
 PORT=5000
 MONGODB_URI=your-mongodb-connection-string
 Usage
 Start the server:
 
-bash
-Copy code
 cd woodsense-server
 npm start
 Start the client:
 
-bash
-Copy code
+
 cd ../woodsense-client
 npm start
 Open your browser and visit http://localhost:3000 to access the website.

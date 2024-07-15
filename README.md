@@ -1,5 +1,5 @@
 
-# WoodSense
+# woodsSense
 
 ![WoodSense](https://i.ibb.co/5kDJgvh/website-ss.jpg)
 
@@ -48,8 +48,6 @@ Visit the live site at: [WoodSense](https://woodsense-df773.web.app/)
    git clone https://github.com/your-username/woodsense-server.git
 Navigate to the project directories and install dependencies:
 
-bash
-Copy code
 cd woodsSense
 npm install
 
@@ -76,6 +74,6 @@ npm start
 Start the client:
 
 
-cd ../woodsense-client
+cd ../woodsense
 npm start
-Open your browser and visit http://localhost:3000 to access the website.
+Open your browser and visit http://localhost:3010 to access the website.

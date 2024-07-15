@@ -29,23 +29,23 @@ const router = createBrowserRouter([
             <MyCraftList></MyCraftList>
           </ProtectedRoutes>
         ),
-        loader: () => fetch(" https://wood-sense-server-side.vercel.app/items"),
+        loader: () => fetch("https://wood-sense-server-side.vercel.app/items"),
       },
       {
         path: "/craftItemsNav",
         element: <CraftItemNav></CraftItemNav>,
-        loader: () => fetch(" https://wood-sense-server-side.vercel.app/items"),
+        loader: () => fetch("https://wood-sense-server-side.vercel.app/items"),
       },
       {
         path: "/details/:id",
-        element: <ProtectedRoutes></ProtectedRoutes>,
+        element: <ProtectedRoutes><Details></Details></ProtectedRoutes>,
         loader: ({ params }) =>
           fetch(
-            ` https://wood-sense-server-side.vercel.app/items/${params.id}`
+            `https://wood-sense-server-side.vercel.app/items/${params.id}`
           ),
       },
       {
-        path: "/addItems",
+        path:"/addItems",
         element: (
           <ProtectedRoutes>
             <AddCraftItem></AddCraftItem>
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
         path: "/subcategory/:id",
         element: <CategoryList></CategoryList>,
         loader: ({ params }) =>
-          fetch(` https://wood-sense-server-side.vercel.app/${params.id}`),
+          fetch(` https://wood-sense-server-side.vercel.app/items/${params.id}`),
       },
       {
         path: "/update/:id",

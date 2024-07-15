@@ -10,6 +10,7 @@ import "./Banner.css";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 export default function Banner() {
   return (
@@ -42,7 +43,7 @@ export default function Banner() {
                 <span className="text-white">Kitchenware</span>
               </h2>
               <button className="btn btn-ghost text-yellow-200 border-2 border-yellow-200">
-                View Details
+                <Link to={"/craftItemsNav"}>View Crafts</Link>
               </button>
             </div>
           </div>
@@ -60,7 +61,7 @@ export default function Banner() {
                 Jute <span className="text-white">Kitchenware</span> utensils
               </h2>
               <button className="btn btn-ghost text-yellow-200 border-2 border-yellow-200">
-                View Details
+                <Link to={"/craftItemsNav"}>View Crafts</Link>
               </button>
             </div>
           </div>
@@ -78,7 +79,7 @@ export default function Banner() {
                 wooden <span className="text-blue-400">and</span> sculptures
               </h2>
               <button className="btn btn-ghost text-yellow-200 border-2 border-yellow-200">
-                View Details
+                <Link to={"/craftItemsNav"}>View Crafts</Link>
               </button>
             </div>
           </div>

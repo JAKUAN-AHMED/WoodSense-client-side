@@ -33,7 +33,7 @@ const AddCraftItem = () => {
     };
     console.log(CategoryItems);
     //send items to database
-    fetch(" https://wood-sense-server-side.vercel.app/items", {
+    fetch("https://wood-sense-server-side.vercel.app/items", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -7,7 +7,7 @@ const CategoryList = () => {
     const craft=useLoaderData();
     const [categroy,setCategory]=useState([]);
     useEffect(()=>{
-        fetch(" https://wood-sense-server-side.vercel.app/items")
+        fetch("https://wood-sense-server-side.vercel.app/items")
           .then((res) => res.json())
           .then((data) => setCategory(data));
     },[])

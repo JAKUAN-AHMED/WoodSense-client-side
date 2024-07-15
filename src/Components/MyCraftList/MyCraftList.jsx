@@ -36,7 +36,7 @@ const MyCraftList = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-          fetch(` https://wood-sense-server-side.vercel.app/items/${_id}`, {
+          fetch(`https://wood-sense-server-side.vercel.app/items/${_id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())

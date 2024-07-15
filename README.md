@@ -1,5 +1,5 @@
 
-# WoodSense
+# WoodsSense
 
 ![WoodSense](https://i.ibb.co/5kDJgvh/website-ss.jpg)
 

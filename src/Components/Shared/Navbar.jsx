@@ -141,9 +141,9 @@ const Navbar = () => {
             <a className="btn btn-circle">
               <img
                 className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] border rounded-full"
-                src={User.photoURL || "user"}
-                alt={User.displayName || "user"}
-                title={User.displayName || "user"}
+                src={User?.photoURL || "user"}
+                alt={User?.displayName || "user"}
+                title={User?.displayName || "user"}
               />
             </a>
             <button

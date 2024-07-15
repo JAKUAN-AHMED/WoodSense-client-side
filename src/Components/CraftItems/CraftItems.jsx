@@ -6,12 +6,12 @@ import { Link, useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 const CraftItems = () => {
-   useEffect(() => {
-     AOS.init({
-       duration: 1000, // You can also configure AOS here
-     });
-   }, []);
-  const navigate=useNavigate();
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // You can also configure AOS here
+    });
+  }, []);
+  const navigate = useNavigate();
   const [crafts, setCraft] = useState([]);
   const [sliderRef, instanceRef] = useKeenSlider({
     breakpoints: {
@@ -26,7 +26,7 @@ const CraftItems = () => {
   });
 
   useEffect(() => {
-    fetch("http://localhost:3010/items")
+    fetch(" https://wood-sense-server-side.vercel.app/items")
       .then((res) => res.json())
       .then((data) => setCraft(data));
   }, []);

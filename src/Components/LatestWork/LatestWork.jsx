@@ -10,7 +10,7 @@ const LatestWork = () => {
    });
  }, []);
   useEffect(() => {
-    fetch("http://localhost:3010/items")
+    fetch(" https://wood-sense-server-side.vercel.app/items")
       .then((res) => res.json())
       .then((data) => setCraft(data));
   }, []);

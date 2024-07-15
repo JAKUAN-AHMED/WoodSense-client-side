@@ -29,22 +29,20 @@ const router = createBrowserRouter([
             <MyCraftList></MyCraftList>
           </ProtectedRoutes>
         ),
-        loader: () => fetch("http://localhost:3010/items"),
+        loader: () => fetch(" https://wood-sense-server-side.vercel.app/items"),
       },
       {
         path: "/craftItemsNav",
         element: <CraftItemNav></CraftItemNav>,
-        loader: () => fetch("http://localhost:3010/items"),
+        loader: () => fetch(" https://wood-sense-server-side.vercel.app/items"),
       },
       {
         path: "/details/:id",
-        element: (
-          <ProtectedRoutes>
-            <Details></Details>
-          </ProtectedRoutes>
-        ),
+        element: <ProtectedRoutes></ProtectedRoutes>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3010/items/${params.id}`),
+          fetch(
+            ` https://wood-sense-server-side.vercel.app/items/${params.id}`
+          ),
       },
       {
         path: "/addItems",
@@ -58,7 +56,7 @@ const router = createBrowserRouter([
         path: "/subcategory/:id",
         element: <CategoryList></CategoryList>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3010/items/${params.id}`),
+          fetch(` https://wood-sense-server-side.vercel.app/${params.id}`),
       },
       {
         path: "/update/:id",
@@ -68,7 +66,9 @@ const router = createBrowserRouter([
           </ProtectedRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3010/items/${params.id}`),
+          fetch(
+            ` https://wood-sense-server-side.vercel.app/items/${params.id}`
+          ),
       },
       {
         path: "/login",

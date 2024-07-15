@@ -36,20 +36,19 @@ const MyCraftList = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-          fetch(`http://localhost:3010/items/${_id}`, {
+          fetch(` https://wood-sense-server-side.vercel.app/items/${_id}`, {
             method: "DELETE",
           })
-          .then((res) => res.json())
-          .then((data) =>{
-              if(data.deletedCount>0)
-              {
-                  Swal.fire({
-                    title: "Deleted!",
-                    text: "Successfully deleted.",
-                    icon: "success",
-                    });
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.deletedCount > 0) {
+                Swal.fire({
+                  title: "Deleted!",
+                  text: "Successfully deleted.",
+                  icon: "success",
+                });
               }
-          }) }
+            }); }
         Swal.fire({
           title: "Deleted!",
           text: "Your file has been deleted.",

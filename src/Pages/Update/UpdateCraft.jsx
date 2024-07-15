@@ -32,7 +32,7 @@ const UpdateCraft = () => {
     };
 
     // Send items to database
-    fetch(`http://localhost:3010/items/${craft._id}`, {
+    fetch(` hhttps://wood-sense-server-side.vercel.app//items/${craft._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

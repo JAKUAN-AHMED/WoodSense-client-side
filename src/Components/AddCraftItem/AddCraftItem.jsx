@@ -33,24 +33,23 @@ const AddCraftItem = () => {
     };
     console.log(CategoryItems);
     //send items to database
-    fetch("http://localhost:3010/items",{
-        method:'POST',
-        headers:{
-            'content-type':'application/json'
-        },
-        body:JSON.stringify(CategoryItems)
+    fetch(" https://wood-sense-server-side.vercel.app/items", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(CategoryItems),
     })
-    .then(res=>res.json())
-    .then(data=>{
+      .then((res) => res.json())
+      .then((data) => {
         if (data.acknowledged) {
           Swal.fire({
             title: "Successfully Inserted",
             icon: "success",
-          })
+          });
         }
         form.reset();
-        
-    })
+      });
   };
 
   return (
